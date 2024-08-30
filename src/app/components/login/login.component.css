@@ -1,0 +1,81 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #b8b6b6;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-sizing: border-box;
+    translate: 0% 25%;
+}
+
+.card-header{
+    padding: 16px;
+    border-bottom: 1px solid #a09e9e;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+}
+
+.card-header span.card-title{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.card-header span.card-subtitle{
+    
+}
+
+.card-footer{
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    border-top: 1px solid #a09e9e;
+
+}
+
+.card > .card-content{
+    padding: 16px;
+}
+
+.card-footer > a.card-footer-button{
+    background-color: rgb(99, 187, 99);
+    border-radius: 6px;
+    border: 1px solid #ececec;
+    padding: 16px;
+    text-decoration: none;
+    color: white;
+}
+
+.card-footer > a.card-footer-button:hover{
+    color: rgb(99, 187, 99);
+    background-color: white ;
+    border:1px solid rgb(99, 187, 99);
+    border-radius: 6px;
+    transition: all .5s;
+}
+
+.form-button{
+    padding: 8px;
+    text-align: center;
+    background-color: rgb(83, 83, 219);
+    border-radius: 6px;
+    border: 1px solid #99e6fd;
+    height: 3.5em;
+}
+
+.form-button.btn-login{
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+button.mat-icon-button {
+    padding: 0;
+    min-width: auto;
+    line-height: 1;
+  }
