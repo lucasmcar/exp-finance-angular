@@ -7,6 +7,9 @@
     border-radius: 6px;
     box-sizing: border-box;
     translate: 0% 25%;
+    -webkit-box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.322);
+    -moz-box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.322);
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.322);
 }
 
 .card-header{
@@ -24,9 +27,6 @@
     font-weight: bold;
 }
 
-.card-header span.card-subtitle{
-    
-}
 
 .card-footer{
     padding: 16px;
@@ -72,6 +72,13 @@
     color: white;
     font-weight: bold;
     font-size: 18px;
+}
+
+.form-button:hover{
+    border: 1px solid rgb(83, 83, 219);
+    transition: all .5s;
+    background-color: white;
+    color: rgb(83, 83, 219);
 }
 
 button.mat-icon-button {

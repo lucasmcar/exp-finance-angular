@@ -7,17 +7,28 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { LoginComponent } from './components/login/login.component';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from './shared/material/material.module';
+import { RegisterComponent } from './components/register/register.component';
+import {  HttpClientModule } from '@angular/common/http';
+import { LoadingComponent } from './shared/dialogs/loading/loading.component';
+import { SuccessComponent } from './shared/dialogs/success/success.component';
+import { ErrorComponent } from './shared/dialogs/error/error.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    LoadingComponent,
+    SuccessComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync()

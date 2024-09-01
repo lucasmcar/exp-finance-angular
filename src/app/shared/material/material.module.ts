@@ -31,7 +31,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatProgressSpinnerModule
     
   ]
 })
