@@ -12,6 +12,9 @@ import {  HttpClientModule } from '@angular/common/http';
 import { LoadingComponent } from './shared/dialogs/loading/loading.component';
 import { SuccessComponent } from './shared/dialogs/success/success.component';
 import { ErrorComponent } from './shared/dialogs/error/error.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AuthGuard } from './auth.guard';
+
 
 
 @NgModule({
@@ -21,16 +24,20 @@ import { ErrorComponent } from './shared/dialogs/error/error.component';
     RegisterComponent,
     LoadingComponent,
     SuccessComponent,
-    ErrorComponent
+    ErrorComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    
+    
   ],
   providers: [
+    AuthGuard,
     provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]

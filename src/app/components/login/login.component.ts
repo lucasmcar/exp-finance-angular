@@ -46,22 +46,28 @@ export class LoginComponent implements OnInit {
     const { email, senha } = this.formLogin.value;
     this.loading = true;
 
+    console.log(this.formLogin.value)
+
     const user: Usuario ={
       nome: '',
       email,
       senha
     }
 
-    this.loginService.login(user).subscribe({
-      next: (response) => {
-        this.loading=false;
-        this.router.navigate(['/dashboard']);
-      },
-      error: (error) => {
-        console.error('Login failed', error);
-        this.loading = false; // Oculta o spinner em caso de erro
+    this.loginService.login(user).subscribe( 
+      (response: { token?: string }) => {  // Função para lidar com o sucesso
+      if (response.token) {
+          localStorage.setItem('token', response.token);
+          this.router.navigate(['/dashboard']);
+      } else {
+          console.error('Token is undefined');
       }
-    })
+      this.loading = false;
+  },
+  (error) => {  // Função para lidar com o erro
+      console.error('Login failed', error);
+      this.loading = false; // Oculta o spinner em caso de erro
+  })
 
   }
 

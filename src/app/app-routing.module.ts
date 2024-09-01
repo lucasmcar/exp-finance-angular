@@ -14,6 +14,11 @@ const routes: Routes = [
     path: 'registro/novo',
     loadChildren: () =>import('./components/register/register/register.module')
     .then(m => m.RegisterModule)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./components/dashboard/dashboard/dashboard.module')
+    .then(m => m.DashboardModule)
   }
 
 ];
