@@ -68,6 +68,12 @@
     height: 3.5em;
 }
 
+button > mat-spinner{
+    display: flex;
+    color: white;
+    justify-content: center;
+}
+
 .form-button.btn-login{
     color: white;
     font-weight: bold;

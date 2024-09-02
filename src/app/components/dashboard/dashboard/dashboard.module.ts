@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { MaterialModule } from '../../../shared/material/material.module';
-
+import { BaseChartDirective } from 'ng2-charts';
 
 @NgModule({
   declarations: [],
@@ -11,6 +11,8 @@ import { MaterialModule } from '../../../shared/material/material.module';
     CommonModule,
     DashboardRoutingModule,
     MaterialModule,
+    BaseChartDirective
+    
   ]
 })
 export class DashboardModule { }

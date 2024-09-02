@@ -54,10 +54,13 @@ export class LoginComponent implements OnInit {
       senha
     }
 
+      
     this.loginService.login(user).subscribe( 
-      (response: { token?: string }) => {  // Função para lidar com o sucesso
+      (response: { token?: string, id?: string, nome: string }) => {  // Função para lidar com o sucesso
       if (response.token) {
           localStorage.setItem('token', response.token);
+          localStorage.setItem('nomeUsuario', response.nome);
+          localStorage.setItem('userId', response.id!);
           this.router.navigate(['/dashboard']);
       } else {
           console.error('Token is undefined');

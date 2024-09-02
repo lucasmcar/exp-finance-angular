@@ -14,6 +14,8 @@ import { SuccessComponent } from './shared/dialogs/success/success.component';
 import { ErrorComponent } from './shared/dialogs/error/error.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthGuard } from './auth.guard';
+import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
+
 
 
 
@@ -38,7 +40,8 @@ import { AuthGuard } from './auth.guard';
   ],
   providers: [
     AuthGuard,
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    provideCharts(withDefaultRegisterables())
   ],
   bootstrap: [AppComponent]
 })

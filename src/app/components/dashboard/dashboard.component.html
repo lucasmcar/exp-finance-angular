@@ -1,25 +1,39 @@
 <nav class="nav">
-  
-    <ul>
-        <li (click)="logout()">Logout</li>
+    <span id="welcome">
+        Bem Vindo, {{ nomeUsuario }}
+    </span>
+    <ul class="nav-items flex">
+        <mat-icon routerLink="">
+            add
+        </mat-icon>
+        <mat-icon (click)="logout()">
+            logout
+        </mat-icon>
     </ul>
 </nav>
 
 <div class="container">
-
     <div class="card ">
 
         <div class="details">
-            <span>Saidas Totais: </span>
+            <span>Saídas Totais: </span>
             <span id="out" (click)="toOut()"> R$0,00</span>
         </div>
+        <div class="divider"></div>
         <div class="details">
             <span>Entradas Totais: </span>
-            <span id="in"> R$0,00</span>
+            <span id="in"> R${{ totalReceitas?.toFixed(2) }}</span>
             
         </div>
         
+    </div>
+</div>
+
+<div class="container">
+    <div class="card-container">
+        <div class="card">
+            </div>
 
     </div>
-
 </div>
+

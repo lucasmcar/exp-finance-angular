@@ -18,6 +18,8 @@
     justify-content: space-between;
     gap: 16px;
     margin: 8px 6px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 #out{
@@ -26,6 +28,7 @@
     padding: 8px;
     border-radius: 6px;
     background-color: rgb(228, 133, 133);
+    
 }
 
 #out:hover{
@@ -38,5 +41,48 @@
     padding: 8px;
     border-radius: 6px;
     background-color: rgb(149, 228, 133);
+   
 }
+
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas com largura igual */
+    gap: 16px; /* Espaçamento entre os cards */
+  }
+
+  @media (max-width: 1024px) {
+    .card-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .card-container {
+      grid-template-columns: 1fr; /* 1 coluna em telas pequenas */
+    }
+  }
+
+  .flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 16px;
+  }
+  
+
+mat-icon{
+    color: white;
+    padding: 8px;
+}
+
+mat-icon:hover{
+    cursor: pointer;
+}
+
+#welcome{
+    color: white;
+    text-transform: uppercase;
+}
+
     
