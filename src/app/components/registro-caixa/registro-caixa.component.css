@@ -1,0 +1,24 @@
+.form-button{
+    padding: 8px;
+    text-align: center;
+    background-color: rgb(194, 194, 194);
+    border-radius: 6px;
+    
+    height: 3.5em;
+}
+
+.form-button.btn-cadastro{
+    background-color: rgb(42, 219, 196);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: 1px solid #99e6fd;
+}
+
+.form-button.btn-cadastro-desp{
+    background-color: rgb(238, 107, 157);
+    color: rgb(170, 79, 79);
+    font-weight: bold;
+    font-size: 18px;
+    border: 1px solid rgb(238, 107, 157);;
+}

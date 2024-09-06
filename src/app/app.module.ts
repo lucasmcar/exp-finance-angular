@@ -8,13 +8,17 @@ import { LoginComponent } from './components/login/login.component';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from './shared/material/material.module';
 import { RegisterComponent } from './components/register/register.component';
-import {  HttpClientModule } from '@angular/common/http';
+import {  HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoadingComponent } from './shared/dialogs/loading/loading.component';
 import { SuccessComponent } from './shared/dialogs/success/success.component';
 import { ErrorComponent } from './shared/dialogs/error/error.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthGuard } from './auth.guard';
-import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
+import * as echarts from 'echarts';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { CardGraphsComponent } from './shared/card-graphs/card-graphs.component';
+import { RegistroCaixaComponent } from './components/registro-caixa/registro-caixa.component';
+import { AuthInterceptor } from './interceptor/AuthInterceptor';
 
 
 
@@ -27,7 +31,9 @@ import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
     LoadingComponent,
     SuccessComponent,
     ErrorComponent,
-    DashboardComponent
+    DashboardComponent,
+    CardGraphsComponent,
+    RegistroCaixaComponent
   ],
   imports: [
     BrowserModule,
@@ -35,13 +41,17 @@ import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
     RouterModule,
     MaterialModule,
     HttpClientModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts'),
+    }),
     
     
   ],
   providers: [
     AuthGuard,
     provideAnimationsAsync(),
-    provideCharts(withDefaultRegisterables())
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
+    
   ],
   bootstrap: [AppComponent]
 })

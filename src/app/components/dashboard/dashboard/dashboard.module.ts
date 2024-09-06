@@ -3,15 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { MaterialModule } from '../../../shared/material/material.module';
-import { BaseChartDirective } from 'ng2-charts';
+import { CardGraphsComponent } from '../../../shared/card-graphs/card-graphs.component';
+
 
 @NgModule({
-  declarations: [],
+  declarations: [
+   
+  ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     MaterialModule,
-    BaseChartDirective
+    
     
   ]
 })

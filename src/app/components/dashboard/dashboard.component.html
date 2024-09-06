@@ -3,7 +3,7 @@
         Bem Vindo, {{ nomeUsuario }}
     </span>
     <ul class="nav-items flex">
-        <mat-icon routerLink="">
+        <mat-icon routerLink="/registro/caixa">
             add
         </mat-icon>
         <mat-icon (click)="logout()">
@@ -22,7 +22,7 @@
         <div class="divider"></div>
         <div class="details">
             <span>Entradas Totais: </span>
-            <span id="in"> R${{ totalReceitas?.toFixed(2) }}</span>
+            <span id="in"> R${{ totalReceitas?.toFixed(2)  }}</span>
             
         </div>
         
@@ -32,7 +32,11 @@
 <div class="container">
     <div class="card-container">
         <div class="card">
-            </div>
+            <app-card-graphs></app-card-graphs>
+        </div>
+        <div class="card">
+            <app-card-graphs></app-card-graphs>
+        </div>
 
     </div>
 </div>

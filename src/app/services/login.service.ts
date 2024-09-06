@@ -48,4 +48,8 @@ export class LoginService {
     localStorage.removeItem('userId'); // Remove o UserId do localStorage
     this.router.navigate(['/login']); // Redireciona para a página de login
   }
+
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token'); // Verifica se o token está presente
+  }
 }

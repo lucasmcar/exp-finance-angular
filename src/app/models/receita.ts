@@ -1,8 +1,8 @@
 export interface Receita {
-    idReceita: number;
+    idReceita?: number;
     valor: number;
     descricao: string;
     dataReceita: Date;
-    idCategoria: number;
-    idUsuario: number;
+    idcategoria: number;
+    idusuario: number;
 }

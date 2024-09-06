@@ -19,6 +19,11 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () => import('./components/dashboard/dashboard/dashboard.module')
     .then(m => m.DashboardModule)
+  },
+  {
+    path : 'registro/caixa',
+    loadChildren: ()=> import('./components/registro-caixa/registro-caixa/registro-caixa.module')
+    .then(m => m.RegistroCaixaModule)
   }
 
 ];

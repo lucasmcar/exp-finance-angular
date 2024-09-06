@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../services/login.service';
 import { ReceitaService } from '../../services/receita.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,12 +15,16 @@ export class DashboardComponent implements OnInit {
   nomeUsuario: any = '';
   totalReceitas: number | null = null;
 
-  constructor(private loginService: LoginService, private receitaService: ReceitaService){
+  constructor(private router: Router, private loginService: LoginService, private receitaService: ReceitaService){
     this.nomeUsuario = localStorage.getItem('nomeUsuario')
   }
 
   ngOnInit(): void {
+    if(!this.loginService.isLoggedIn()){
+      this.router.navigate(['/login']);
+    }
     this.totalReceitas = this.returnTotal();
+    console.log(this.totalReceitas)
   }
 
   logout(){
@@ -33,6 +38,7 @@ export class DashboardComponent implements OnInit {
   returnTotal() : any{
     this.receitaService.getTotal().subscribe({
       next: (response: { total: number; }) => {
+
         return response.total;
       },
       error: (err: any) => {

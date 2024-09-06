@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Receita } from '../models/receita';
 
@@ -13,7 +13,12 @@ export class ReceitaService {
 
 
   getTotal() : any{
-    return this.http.get<number>(`${this.apiUrl}/receita/total`)
+    const token = localStorage.getItem('token'); // Obtém o token salvo no localStorage
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}` // Adiciona o token no cabeçalho
+    });
+  
+    return this.http.get<number>(`${this.apiUrl}/receita/total`, { headers });
   }
 
   salvarReceita(receita: Receita){
