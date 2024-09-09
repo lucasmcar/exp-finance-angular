@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../services/login.service';
 import { ReceitaService } from '../../services/receita.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -13,18 +14,21 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
 
   nomeUsuario: any = '';
-  totalReceitas: number | null = null;
+  total: any ;
+  
 
   constructor(private router: Router, private loginService: LoginService, private receitaService: ReceitaService){
     this.nomeUsuario = localStorage.getItem('nomeUsuario')
+    this.total= 0;
   }
 
   ngOnInit(): void {
     if(!this.loginService.isLoggedIn()){
       this.router.navigate(['/login']);
     }
-    this.totalReceitas = this.returnTotal();
-    console.log(this.totalReceitas)
+    this.returnTotal();
+    
+    
   }
 
   logout(){
@@ -35,15 +39,18 @@ export class DashboardComponent implements OnInit {
 
   toIn(){}
 
-  returnTotal() : any{
+  returnTotal() {
     this.receitaService.getTotal().subscribe({
-      next: (response: { total: number; }) => {
-
-        return response.total;
+      next: (response) => {
+        
+       this.total = response
+       
+       
       },
       error: (err: any) => {
         console.error('Error fetching total:', err);
       }
+
     });
   }
 

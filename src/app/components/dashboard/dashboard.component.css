@@ -85,4 +85,19 @@ mat-icon:hover{
     text-transform: uppercase;
 }
 
+.card-graphs{
+  box-sizing: border-box;
+  border: 1px solid rgb(202, 201, 201);
+  border-radius: 6px;
+  display: flex;
+  height: auto;
+  width: 350px;
+  padding: 8px;
+  flex-direction: column;
+  -webkit-box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.322);
+  -moz-box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.322);
+  box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.322);
+  margin-top: 8px;
+}
+
     
