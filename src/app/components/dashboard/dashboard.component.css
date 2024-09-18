@@ -48,7 +48,7 @@
 .card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 colunas com largura igual */
-    gap: 16px; /* Espaçamento entre os cards */
+    gap: 8px; /* Espaçamento entre os cards */
   }
 
   @media (max-width: 1024px) {

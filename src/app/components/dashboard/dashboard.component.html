@@ -6,6 +6,9 @@
         <mat-icon routerLink="/registro/caixa">
             add
         </mat-icon>
+        <mat-icon routerLink="/registro/caixa">
+            settings
+        </mat-icon>
         <mat-icon (click)="logout()">
             logout
         </mat-icon>
@@ -13,7 +16,21 @@
 </nav>
 
 <div class="container">
-    <div class="card ">
+
+    <ng-container *ngIf="(receita$ | async) as receita">
+        <ng-container *ngIf="(despesa$ | async) as despesa">
+            <ng-container *ngIf="data" as data>
+          <app-card-dashboard 
+                [data]="data"
+            [receita]="receita" 
+            [despesa]="despesa">
+          </app-card-dashboard>
+        </ng-container>
+        </ng-container>
+      </ng-container>
+
+
+    <!--<div class="card ">
 
         <div class="details">
             <span>Saídas Totais: </span>
@@ -26,7 +43,7 @@
             
         </div>
         
-    </div>
+    </div>-->
 </div>
 
 <div class="container">
@@ -40,4 +57,3 @@
 
     </div>
 </div>
-

@@ -1,0 +1,99 @@
+.card-dashboard{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px;
+    align-items: center;
+    -webkit-box-shadow: 2px 2px 1px 1px rgba(205, 27, 211, 0.322);
+    -moz-box-shadow: 2px 2px 1px 1px rgba(205, 27, 211, 0.322);
+    box-shadow: 2px 2px 1px 1px rgba(205, 27, 211, 0.322);
+}
+.card-dashboard-text{
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.card-dashboard-text > span{
+    font-size: 1.5rem;
+    color: #dd30cf;
+}
+.card-dashboard-text > small{
+    font-size: .75rem;
+    color: #cacaca;
+    font-style: italic;
+}
+
+.border-primary{
+    border-radius: 6px;
+    border: 1px solid #dd30cf
+}
+
+.grid{
+    display: grid;
+    grid-template-areas: 
+        "toggle main-value"
+        "toggle sub-values";
+    grid-template-columns: 40px auto;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+
+}
+
+.t-3{
+    margin-top: 3rem;
+}
+
+.toggle {
+    grid-area: toggle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+}
+
+.toggle.on {
+    background-color: #4caf50;
+    color: white;
+}
+
+.main-value {
+    grid-area: main-value;
+    font-size: 2.5em;
+    font-weight:700;
+    color: #dd30cf;
+}
+
+.sub-values {
+    grid-area: sub-values;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    color: #666;
+    gap: 8px;
+}
+
+#rec{
+    border-radius: 6px;
+    padding: 6px;
+    background-color: #66ca6a;
+    color: White;
+    width: 100%;
+    text-align: center;
+}
+
+#saida{
+    border-radius: 6px;
+    padding: 6px;
+    background-color: #e65158;
+    color: white;
+    width: 100%;
+    text-align: center;
+}

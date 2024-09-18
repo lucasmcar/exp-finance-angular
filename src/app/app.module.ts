@@ -19,6 +19,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { CardGraphsComponent } from './shared/card-graphs/card-graphs.component';
 import { RegistroCaixaComponent } from './components/registro-caixa/registro-caixa.component';
 import { AuthInterceptor } from './interceptor/AuthInterceptor';
+import { CardDashboardComponent } from './shared/card-dashboard/card-dashboard.component';
 
 
 
@@ -33,7 +34,8 @@ import { AuthInterceptor } from './interceptor/AuthInterceptor';
     ErrorComponent,
     DashboardComponent,
     CardGraphsComponent,
-    RegistroCaixaComponent
+    RegistroCaixaComponent,
+    CardDashboardComponent
   ],
   imports: [
     BrowserModule,

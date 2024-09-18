@@ -19,7 +19,7 @@ export class ReceitaService {
       'Authorization': `Bearer ${token}` // Adiciona o token no cabeçalho
     });
   
-    return this.http.get<any>(`${this.apiUrl}/receita/total`, { headers });
+    return this.http.get<number>(`${this.apiUrl}/receita/total`, { headers });
   }
 
   getReceitasUltimosTresMeses(): any {
