@@ -1,0 +1,100 @@
+.income-box{
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: 1px solid rgb(221, 133, 221);
+    margin: 8px 16px;
+    flex-direction: column;
+    display: flex;
+    -webkit-box-shadow: 2px 2px 1px 1px rgba(205, 27, 211, 0.322);
+    -moz-box-shadow: 2px 2px 1px 1px rgba(205, 27, 211, 0.322);
+    box-shadow: 2px 2px 1px 1px rgba(205, 27, 211, 0.322);
+}
+
+.valor > .date_income{
+    font-size: .75rem;
+    font-style: italic;
+    color: #9b9797;
+   
+}
+
+.income-data{
+    box-sizing: border-box;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 160px auto;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-areas: 
+        "valor actions" 
+        "valor actions";
+    
+    padding: 16px;
+    
+}
+
+.income-data:hover{
+    padding: 16px;
+    cursor: pointer;
+    background-color: #e7e7e7ef;
+    border-radius: 6px;
+    transition: all .5s ease;
+    
+}
+
+
+.divider{
+    border-bottom: 1px solid rgba(231, 97, 235, 0.555);
+    margin-left: 16px;
+    margin-right: 16px;
+   
+    box-sizing: border-box;
+}
+
+mat-icon{
+    color: white;
+    padding: 8px;
+}
+
+mat-icon:hover{
+    cursor: pointer;
+}
+
+#welcome{
+    color: white;
+    text-transform: uppercase;
+}
+
+.valor{
+    grid-area: valor;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-incoming{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.name{
+    font-weight: 700;
+    font-size: 0.75rem;
+    display: block;
+    width: 100%;
+}
+
+.value{
+    font-size: 1rem;
+}
+
+.actions{
+    grid-area: actions;
+    flex-direction: column;
+    display: flex;
+}
+
+
+

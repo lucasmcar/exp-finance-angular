@@ -20,6 +20,7 @@ export class UsuarioService {
       },
       disableClose: true
     });
+    
     return this.http.post<Usuario>(`${this.apiUrl}/registro/usuario`, usuario);
   }
 }

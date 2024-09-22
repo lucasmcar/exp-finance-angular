@@ -16,11 +16,10 @@ export class RegistroCaixaComponent implements OnInit {
 
   categorias = [
     { id: 0, nome: '' },
-    { id: 1, nome: 'Alimentação' },
-    { id: 2, nome: 'Transporte' },
-    { id: 3, nome: 'Educação' },
-    { id: 4, nome: 'Lazer' },
-    { id: 5, nome: 'Saúde' }
+    { id: 1, nome: 'Empréstimo' },
+    { id: 2, nome: 'Prestação de Serviço' },
+    { id: 3, nome: 'Investimentos' },
+    { id: 4, nome: 'Venda' },
   ];
 
   tipos = [
@@ -65,7 +64,7 @@ export class RegistroCaixaComponent implements OnInit {
       const receita: Receita = {
         valor,
         descricao,
-        dataReceita: new Date(),
+        data_receita: new Date(),
         idusuario,
         idcategoria
       }

@@ -24,6 +24,16 @@ const routes: Routes = [
     path : 'registro/caixa',
     loadChildren: ()=> import('./components/registro-caixa/registro-caixa/registro-caixa.module')
     .then(m => m.RegistroCaixaModule)
+  },
+  {
+    path: 'lista/receita',
+    loadChildren: () => import('./components/list-income/list-income/list-income.module')
+    .then( m => m.ListIncomeModule)
+  },
+  {
+    path: 'add/categoria',
+    loadChildren: () => import('./components/add-category/add-category/add-category.module')
+    .then(m => m.AddCategoryModule)
   }
 
 ];

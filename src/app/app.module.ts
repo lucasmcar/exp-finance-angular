@@ -20,6 +20,8 @@ import { CardGraphsComponent } from './shared/card-graphs/card-graphs.component'
 import { RegistroCaixaComponent } from './components/registro-caixa/registro-caixa.component';
 import { AuthInterceptor } from './interceptor/AuthInterceptor';
 import { CardDashboardComponent } from './shared/card-dashboard/card-dashboard.component';
+import { ListIncomeComponent } from './components/list-income/list-income.component';
+import { AddCategoryComponent } from './components/add-category/add-category.component';
 
 
 
@@ -35,7 +37,9 @@ import { CardDashboardComponent } from './shared/card-dashboard/card-dashboard.c
     DashboardComponent,
     CardGraphsComponent,
     RegistroCaixaComponent,
-    CardDashboardComponent
+    CardDashboardComponent,
+    ListIncomeComponent,
+    AddCategoryComponent
   ],
   imports: [
     BrowserModule,

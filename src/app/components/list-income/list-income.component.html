@@ -1,0 +1,26 @@
+<nav class="nav">
+    <span id="welcome" class="nav-incoming">
+        <mat-icon routerLink="/dashboard" >arrow_back</mat-icon>
+        Receitas e entradas de {{ nomeUsuario }}
+    </span>
+</nav>
+
+
+
+<div class="income-box">
+    <div *ngFor="let item of allIncomes">
+        <div class="income-data" (click)="showDetails(item.idreceita)">
+    
+            <div class="valor">
+                <span class="value" style="color: rgb(230, 87, 230); font-size: 1.25rem !important;"> R${{item.valor}} </span>
+                <span class="date_income" style="color: rgb(230, 87, 230);"> {{item.data_receita | date:'dd/MM/yyyy HH:mm' }} </span>
+            </div>
+            
+            <div class="actions">
+                <p class="name"> {{item.nome}} </p>
+            </div>
+    
+        </div>
+        <div class="divider"></div>
+    </div>
+</div>
