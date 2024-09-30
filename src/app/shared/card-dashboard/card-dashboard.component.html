@@ -6,13 +6,13 @@
     </div>
 
     <div class="grid">
-        <div class="toggle" id="toggleBtn">
-            <span id="toggleIcon">👁️</span>
+        <div class="toggle" id="toggleBtn" (click)="toggleValores()">
+            <mat-icon >{{mostrarValores ?  'visibility' : 'visibility_off' }}</mat-icon>
         </div>
-        <div class="main-value">R${{(receita - despesa).toFixed(2)}}</div>
+        <div class="main-value">{{ mostrarValores ? ((receita - despesa) | currency: 'BRL') : '***' }}</div>
         <div class="sub-values">
-            <span routerLink="/lista/receita" id="rec">R${{ receita }}</span>
-            <span id="saida">R${{ despesa }}</span>
+            <span routerLink="/lista/receita" id="rec">{{ mostrarValores ? (receita | currency: 'BRL') : '***'}} </span>
+            <span id="saida">{{ mostrarValores ? (despesa | currency: 'BRL') : '***' }}</span>
         </div>
     </div>
 

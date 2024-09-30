@@ -15,6 +15,7 @@ export class ListIncomeComponent implements OnInit{
   nomeUsuario: any = '';
   allIncomes: Receita[] = [];
 
+  totalF = ''
   total: number = 0;
   receita$: Observable<number>;
   private subscription: Subscription | undefined;
@@ -39,7 +40,6 @@ export class ListIncomeComponent implements OnInit{
     this.receitaService.getTotal().subscribe({
       next: (response) => {
        this.total = response
-       
        
       },
       error: (err: any) => {
@@ -73,7 +73,7 @@ getAllIncome(){
   }
 
   showDetails(id: number | undefined) {
-    this.router.navigate([`/income-details/${id}`])
+    this.router.navigate(['/income-details', id ])
   }
 
 

@@ -11,7 +11,8 @@ import { Observable } from 'rxjs';
 
 export class CardDashboardComponent implements OnInit{
   
-  @Input() receita: number = 0;
+  mostrarValores: boolean = true;
+  @Input() receita:  number = 0;
   @Input() despesa: number = 0;
   @Input() data: string | undefined;
 
@@ -23,6 +24,10 @@ export class CardDashboardComponent implements OnInit{
     this.data
     this.receita
     this.despesa;
+  }
+
+  toggleValores(): void {
+    this.mostrarValores = !this.mostrarValores;
   }
 
 }

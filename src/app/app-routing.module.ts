@@ -34,6 +34,11 @@ const routes: Routes = [
     path: 'add/categoria',
     loadChildren: () => import('./components/add-category/add-category/add-category.module')
     .then(m => m.AddCategoryModule)
+  },
+  {
+    path: 'income-details/:id',
+    loadChildren: () => import('./components/income-details/income-details/income-details.module')
+    .then(m => m.IncomeDetailsModule)
   }
 
 ];

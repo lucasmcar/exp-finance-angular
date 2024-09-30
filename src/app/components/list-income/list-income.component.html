@@ -12,7 +12,7 @@
         <div class="income-data" (click)="showDetails(item.idreceita)">
     
             <div class="valor">
-                <span class="value" style="color: rgb(230, 87, 230); font-size: 1.25rem !important;"> R${{item.valor}} </span>
+                <span class="value" style="color: rgb(230, 87, 230);"> {{item.valor | currency : 'BRL'}} </span>
                 <span class="date_income" style="color: rgb(230, 87, 230);"> {{item.data_receita | date:'dd/MM/yyyy HH:mm' }} </span>
             </div>
             

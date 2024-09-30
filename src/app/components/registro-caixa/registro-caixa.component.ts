@@ -13,6 +13,14 @@ import { Despesa } from '../../models/despesa';
 })
 export class RegistroCaixaComponent implements OnInit {
 
+  origens = [
+    {id: 0, nome: ''},
+    {id: 1, nome: 'Pix'},
+    {id: 2, nome: 'Cartão de Crédito'},
+    {id: 3, nome: 'Cartão de Débito'},
+    {id: 4, nome: 'TED'},
+    {id: 5, nome: 'Físico'}
+  ]
 
   categorias = [
     { id: 0, nome: '' },

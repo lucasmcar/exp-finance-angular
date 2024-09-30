@@ -15,7 +15,7 @@ export class ReceitaService {
   constructor(private http: HttpClient, private dialog: MatDialog) { }
 
 
-  getTotal() : Observable<number>{
+  getTotal() : Observable<any>{
     
     const token = localStorage.getItem('token'); // Obtém o token salvo no localStorage
     const headers = new HttpHeaders({
@@ -43,6 +43,15 @@ export class ReceitaService {
     return this.http.get<Receita[]>(`${this.apiUrl}/receitas`, {headers})
   }
 
+  getDetails(id: number): Observable<Receita>{
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization' : `Bearer ${token}` 
+    });
+
+    return this.http.get<Receita>(`${this.apiUrl}/receita/detalhes/${id}`, {headers})
+  }
+
   salvarReceita(receita: Receita){
      // Abre o spinner de carregamento
      const dialogRef = this.dialog.open(LoadingComponent, {
@@ -57,4 +66,6 @@ export class ReceitaService {
       })
     );
   }
+
+
 }

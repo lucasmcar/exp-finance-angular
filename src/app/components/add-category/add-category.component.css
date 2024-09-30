@@ -1,0 +1,100 @@
+.nav-categoria{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+#categoria{
+    color: white;
+    text-transform: uppercase;
+}
+
+.cat-input{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 6px;
+    align-items: center;
+}
+
+
+
+.cat-input-control{
+    border: 1px solid #c52fbe;
+    border-radius: 6px;
+    min-width: 150px;
+    width: 50%;
+    padding: 8px;
+    height: 25px;
+    outline: none;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.cat-input-control:focus{
+    border: 2px solid #c52fbe;
+    border-radius: 6px;
+   
+    
+}
+
+.subcat-input{
+    margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+    gap: 6;
+    align-items: center;
+}
+
+.subcat-input> label{
+    margin-right: 8px;
+}
+
+.subcat-input > .remove-subcat{
+    border: 1px solid rgb(243, 121, 121);
+    background-color: red;
+    color: white;
+    border-radius: 6px;
+    padding: 8px;
+    height: 40px;
+    margin-left: 5px;
+}
+
+.add-subcat{
+    border: 1px solid rgb(235, 232, 232);
+    background-color: rgb(222, 87, 235);
+    color: white;
+    border-radius: 6px;
+    padding: 8px;
+    height: 42px;
+    margin-left: 8px;
+    text-align: center;
+    
+}
+
+.cat-save{
+    border: none;
+    color: white;
+    padding: 8px;
+    height: 40px;
+    background-color: #9f39be;
+}
+
+.cat-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.additional-subcat{
+    display: flex;
+    flex-direction: column;
+}
+
+.card{
+    border-radius: 6px;
+    border: 1px solid #9f39be;
+    padding: 16px 8px;
+}

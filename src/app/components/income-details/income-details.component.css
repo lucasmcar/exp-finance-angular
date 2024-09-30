@@ -1,0 +1,34 @@
+.info-header{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.info-header > .description{
+    font-size: 2.5rem;
+}
+
+.info-header > .value{
+    font-style: italic;
+    font-size: 1.75rem;
+}
+
+#details{
+    color: white;
+    text-transform: uppercase;
+}
+
+.nav-incoming-details{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.mini-card{
+    border-radius: 6px;
+    width: 30%;
+    padding: 6px;
+    background-color: rgb(174, 34, 202);
+    color: white;
+}

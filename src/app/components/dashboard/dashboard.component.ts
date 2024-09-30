@@ -16,10 +16,9 @@ export class DashboardComponent implements OnInit {
 
   nomeUsuario: any = '';
   total: number = 0;
-  receita$: Observable<number>;
-  despesa$: Observable<number>;
   totalDespesa: number = 0;
   data: string | undefined;
+  totalFormatted = ''
  
 
   constructor(
@@ -29,8 +28,6 @@ export class DashboardComponent implements OnInit {
     private despesaService: DespesaService
   ){
     this.nomeUsuario = localStorage.getItem('nomeUsuario')
-    this.receita$ = receitaService.getTotal();
-    this.despesa$ = despesaService.getTotal();
     this.data = new Date().toLocaleDateString('pt-br', {year: "numeric", day: "2-digit", month: "2-digit"});
   }
 
@@ -41,6 +38,9 @@ export class DashboardComponent implements OnInit {
     }
    this.receitaService.getTotal();
    this.despesaService.getTotal();
+   this.returnTotal();
+   this.returnTotalDespesa();
+
   }
 
   logout(){
@@ -54,8 +54,13 @@ export class DashboardComponent implements OnInit {
   returnTotal() {
     this.receitaService.getTotal().subscribe({
       next: (response) => {
-       this.total = response
-       
+       this.total = response;
+
+       this.totalFormatted = this.total.toLocaleString('pt-br', {
+        style: 'decimal', minimumFractionDigits: 2
+      });
+
+      console.log(this.totalFormatted)
        
       },
       error: (err: any) => {

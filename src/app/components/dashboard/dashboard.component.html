@@ -20,18 +20,10 @@
 
 <div class="container">
 
-    <ng-container *ngIf="(receita$ | async) as receita">
-        <ng-container *ngIf="(despesa$ | async) as despesa">
-            <ng-container *ngIf="data" as data>
-          <app-card-dashboard 
-                [data]="data"
-            [receita]="receita" 
-            [despesa]="despesa">
-          </app-card-dashboard>
-        </ng-container>
-        </ng-container>
-      </ng-container>
-
+    <ng-container *ngIf="data" as data>
+        <app-card-dashboard [data]="data" [receita]="total " [despesa]="totalDespesa">
+        </app-card-dashboard>
+    </ng-container>
 
     <!--<div class="card ">
 

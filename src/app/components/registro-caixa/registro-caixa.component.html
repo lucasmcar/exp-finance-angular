@@ -33,6 +33,15 @@
               </mat-select>
             
         </mat-form-field>
+        <mat-form-field>
+            <mat-label>Origem</mat-label>
+            <mat-select formControlName="idtipo" [(value)]="tipoSelecionado" (selectionChange)="onTipoChange($event)">
+                <mat-option *ngFor="let origem of origens" [value]="origem.id">
+                  {{ origem.nome }}
+                </mat-option>
+              </mat-select>
+            
+        </mat-form-field>
         <input hidden value={{id}} name="idusuario">
         <button class="form-button btn-cadastro">
             Cadastrar

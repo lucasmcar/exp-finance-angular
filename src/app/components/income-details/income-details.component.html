@@ -1,0 +1,34 @@
+<nav class="nav">
+    <span id="details" class="nav-incoming-details">
+        <mat-icon routerLink="/dashboard" >arrow_back</mat-icon>
+        Detalhes do valor
+    </span>
+    <ul class="nav-items flex">
+        <mat-icon routerLink="/registro/caixa">
+            dashboard
+        </mat-icon>
+        <mat-icon routerLink="/registro/caixa">
+            add
+        </mat-icon>
+    </ul>
+</nav>
+
+<div class="container">
+
+    <div class="info-header">
+        <div class="description">
+            {{ details?.descricao}}
+        </div>
+        <div class="value">
+            {{ details?.valor | currency : 'BRL'}}
+        </div>
+    </div>
+    
+    <span>{{ details?.data_receita | date:'dd/MM/yyyy HH:mm'}}</span>
+    <p>{{ details?.nome}}</p>
+    <div>
+        <span class="mini-card">Pix</span>
+    </div>
+    
+</div>
+

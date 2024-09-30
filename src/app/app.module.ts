@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,9 +22,12 @@ import { AuthInterceptor } from './interceptor/AuthInterceptor';
 import { CardDashboardComponent } from './shared/card-dashboard/card-dashboard.component';
 import { ListIncomeComponent } from './components/list-income/list-income.component';
 import { AddCategoryComponent } from './components/add-category/add-category.component';
+import { IncomeDetailsComponent } from './components/income-details/income-details.component';
+import  localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
 
 
-
+registerLocaleData(localePt)
 
 @NgModule({
   declarations: [
@@ -39,7 +42,8 @@ import { AddCategoryComponent } from './components/add-category/add-category.com
     RegistroCaixaComponent,
     CardDashboardComponent,
     ListIncomeComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    IncomeDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +59,7 @@ import { AddCategoryComponent } from './components/add-category/add-category.com
   ],
   providers: [
     AuthGuard,
+    {provide: LOCALE_ID, useValue: 'pt-BR'},
     provideAnimationsAsync(),
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
     

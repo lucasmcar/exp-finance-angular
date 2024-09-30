@@ -1,1 +1,52 @@
-<p>add-category works!</p>
+<nav class="nav">
+    <span id="categoria" class="nav-categoria">
+        <mat-icon routerLink="/dashboard">arrow_back</mat-icon>
+        Nova Categoria
+    </span>
+    <button class="cat-save" (submit)="null" [disabled]="!isFormValid" (click)="salvar()">
+        <mat-icon>
+            save
+        </mat-icon>
+    </button>
+</nav>
+
+
+<div class="container">
+
+    <h2>Adicionar Categoria</h2>
+    <p>
+        Você pode criar suas categorias adicionar sub-subcategorias personalizadas.
+    </p>
+     <!-- Campo de categoria separado -->
+     <div class="cat-box">
+        <form [formGroup]="formNovaCategoria">
+        <div class="cat-input">
+            <label for="categoria-ipt">Categoria</label>
+            <input class="cat-input-control" type="text" formControlName="categoriaInp" id="categoria-ipt" />
+            <button class="add-subcat" id="add-categoria" (click)="adicionarSubcategoria()">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+    </form>
+        
+    </div>
+
+    <!-- Campo de subcategorias em um container separado para não afetar o layout do campo de categoria -->
+    <div class="additional-subcat" *ngIf="mostrarCard">
+        <span>Total de {{ subcategorias.length }} sub-categorias criadas</span>
+        <div class="card">
+            <div *ngFor="let sub of subcategorias; let i = index">
+                <div class="subcat-input">
+                    <label for="subcategoria-{{i}}">Subcategoria {{i + 1}}</label>
+                    <input class="cat-input-control" type="text" [(ngModel)]="sub.nome" id="subcategoria-{{i}}" />
+                    <button class="remove-subcat" (click)="removerSubcategoria(i)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+
+</div>
