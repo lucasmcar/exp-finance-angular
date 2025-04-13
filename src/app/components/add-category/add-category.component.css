@@ -45,6 +45,17 @@
     flex-direction: row;
     gap: 6;
     align-items: center;
+    animation: showInputs .5s ease-in forwards;
+    
+}
+
+@keyframes showInputs {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }   
 }
 
 .subcat-input> label{
@@ -97,4 +108,5 @@
     border-radius: 6px;
     border: 1px solid #9f39be;
     padding: 16px 8px;
+    animation: showInputs .75s ease-in forwards;
 }

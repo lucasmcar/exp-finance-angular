@@ -22,7 +22,7 @@
         <form [formGroup]="formNovaCategoria">
         <div class="cat-input">
             <label for="categoria-ipt">Categoria</label>
-            <input class="cat-input-control" type="text" formControlName="categoriaInp" id="categoria-ipt" />
+            <input class="cat-input-control" type="text" [(ngModel)]="categoria" formControlName="categoriaInp" id="categoria-ipt" />
             <button class="add-subcat" id="add-categoria" (click)="adicionarSubcategoria()">
                 <mat-icon>add</mat-icon>
             </button>
@@ -33,7 +33,7 @@
 
     <!-- Campo de subcategorias em um container separado para não afetar o layout do campo de categoria -->
     <div class="additional-subcat" *ngIf="mostrarCard">
-        <span>Total de {{ subcategorias.length }} sub-categorias criadas</span>
+        <span>{{ subcategorias.length }} sub-categoria(s) para {{categoria}}</span>
         <div class="card">
             <div *ngFor="let sub of subcategorias; let i = index">
                 <div class="subcat-input">

@@ -33,7 +33,8 @@ export class RegisterComponent implements OnInit {
     const usuario: Usuario = {
       nome,
       email,
-      senha
+      senha,
+      registradoEm: new Date()
     } 
 
     this.usuarioService.registrar(usuario).subscribe({

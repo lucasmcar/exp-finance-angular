@@ -4,4 +4,5 @@ export interface Usuario {
     email: string;
     senha: string;
     token?: string;
+    registradoEm: Date;
 }

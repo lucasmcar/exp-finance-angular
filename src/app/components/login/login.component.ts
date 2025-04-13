@@ -46,12 +46,11 @@ export class LoginComponent implements OnInit {
     const { email, senha } = this.formLogin.value;
     this.loading = true;
 
-    console.log(this.formLogin.value)
-
     const user: Usuario ={
       nome: '',
       email,
-      senha
+      senha,
+      registradoEm: new Date()
     }
 
       

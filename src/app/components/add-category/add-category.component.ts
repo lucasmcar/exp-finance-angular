@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CategoryService } from '../../services/category.service';
+import { Categoria } from '../../models/categoria';
 
 @Component({
   selector: 'app-add-category',
@@ -12,16 +14,17 @@ export class AddCategoryComponent  implements OnInit {
   categoria: string = '';
   subcategorias: { nome: string }[] = [];
   mostrarCard: boolean = false;
+  idusuario: any;
 
 
-  constructor(private fb: FormBuilder){
+  constructor(private fb: FormBuilder, private categoriaService: CategoryService){
     this.formNovaCategoria = fb.group({
       categoriaInp: ['', Validators.required]
     })
   }
   
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.idusuario = localStorage.getItem('userId');
   }
 
   isFormValid() {
@@ -40,6 +43,19 @@ export class AddCategoryComponent  implements OnInit {
     }
   }
 
-  salvar(){}
+  salvar(){
+    const { nome } = this.formNovaCategoria.value;
+
+    if(this.subcategorias.length !== 0) {
+
+      const categoria : Categoria = {
+        idusuario: this.idusuario,
+        nome
+      }
+
+      this.categoriaService.addCategoria(categoria)
+
+    }
+  }
 
 }
